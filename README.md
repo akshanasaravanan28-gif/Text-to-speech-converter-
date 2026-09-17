@@ -46,7 +46,7 @@ A single-screen Android app, built with **MIT App Inventor**, that converts any 
 
 ## Screenshot
 
-![App Screenshot]IMG-20260917-WA0004.jpg)
+![App Screenshot](IMG-20260917-WA0004.jpg)
 
 *The app interface showing the text input field and Speak button.*
 
