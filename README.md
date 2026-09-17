@@ -1,48 +1,73 @@
-Text to Speech Converter
+# Text-to-Speech Converter 🔊📝
 
-A simple Android app built with MIT App Inventor that converts typed text into spoken audio.
+A single-screen Android app, built with **MIT App Inventor**, that converts any text a user types into spoken audio using the device's built-in text-to-speech engine.
 
-Overview
+## How it works
 
-This app lets a user type any text into a text box and tap a button to have it read aloud using the device's built-in text-to-speech engine.
+1. The user types any text into the **TextBox**
+2. Tapping the **Speak** button reads the text box contents aloud
+3. The `TextToSpeech1` component converts the entered text into speech
+4. The device's built-in text-to-speech engine produces the spoken output
+5. The user can edit or clear the text and enter a new message
+6. Tapping **Speak** again reads the updated text aloud
 
-Features
-Simple, single-screen interface
-Type any text and convert it to speech instantly
-Uses the device's native TTS engine (works offline once language data is installed)
-Components Used
-Component	Type	Purpose
-Button1	Button	Triggers the text-to-speech conversion
-TextBox1	TextBox	Input field where the user types text
-TextToSpeech1	TextToSpeech	Converts the input text into spoken audio
-How It Works (Blocks Logic)
-when Button1.Click
-do
-   call TextToSpeech1.Speak
-        message = TextBox1.Text
+## Features
 
-When the user taps Button1, the app calls TextToSpeech1.Speak, passing in whatever text is currently in TextBox1 as the message. The device then reads that text aloud.
+- 📝 Simple text input field for typing any message
+- 🔊 One-tap conversion of typed text into spoken audio
+- 🗣️ Uses the device's built-in Text-to-Speech engine
+- ⚡ Converts text to speech instantly
+- 🖥️ Minimal, single-screen interface
+- 📱 Built completely using MIT App Inventor's block-based programming
 
-Setup / How to Use
-Open the project in MIT App Inventor.
-Go to the Designer view and confirm the following components are on Screen1:
-A Button
-A TextBox
-A TextToSpeech (non-visible component)
-Switch to the Blocks view and set up the logic shown above.
-Connect a device or emulator via Connect (AI Companion, USB, or Emulator).
-Type text into the text box and tap the button to hear it spoken.
-Possible Enhancements
-Add a language/locale picker for TextToSpeech1
-Add a pitch/speech-rate slider
-Add a "Clear" button to reset the text box
-Save recently spoken text to a list using TinyDB
-Add error handling for empty text input
-Requirements
-MIT App Inventor account (web-based, no local install needed)
-Android device or emulator with TTS support for testing
-License
+## Tech Stack
 
-Free to use and modify for personal or educational purposes.
+- **Platform:** MIT App Inventor (block-based, no native code)
+- **Components:** `Button1` (Speak button), `TextBox1` (text input), `TextToSpeech1` (non-visible TTS component)
+- **Blocks logic:** A single event handler is used to pass the text from `TextBox1` to `TextToSpeech1`
+- **Programming:** MIT App Inventor Blocks
 
-Content
+## How the Blocks Work
+
+| Event / Component | Action |
+|---|---|
+| `Button1.Click` | Gets the text from `TextBox1` and passes it to `TextToSpeech1.Speak` |
+| `TextBox1.Text` | Provides the text entered by the user |
+| `TextToSpeech1.Speak` | Converts the text into spoken audio using the device's TTS engine |
+
+## Example
+
+| Action | Result |
+|---|---|
+| Type `"Hello world"` in the text box | Text box contains `"Hello world"` |
+| Tap **Speak** | Device speaks `"Hello world"` aloud |
+| Clear the text box and type new text | New text is ready to be spoken |
+| Tap **Speak** again | Device speaks the new text aloud |
+
+## Screenshot
+
+![App Screenshot](screenshot.png)
+
+*The app interface showing the text input field and Speak button.*
+
+## Limitations (v1.0)
+
+- No language or locale picker
+- Uses the available device TTS voice
+- No pitch control
+- No speech-rate control
+- No history of previously spoken text
+- No error handling for empty text input
+
+## Future Improvements
+
+- Add a language/locale picker for different languages
+- Add pitch and speech-rate controls
+- Add a **Clear** button to reset the text box
+- Save recently spoken phrases using TinyDB
+- Add a warning when the text box is empty
+- Add multiple voice options
+- Improve the user interface and overall user experience
+
+---
+*Built as a mini project — MIT App Inventor, block-based development.*
